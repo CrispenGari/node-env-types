@@ -3,7 +3,7 @@
 🌀 This package generates the typescript types for environment variables by reading your `.env` file.
 
 <p align="center" width="50%">
-<img src="./logo.png" alt="logo" width="200"/>
+<img src="https://github.com/CrispenGari/node-env-types/blob/main/logo.png" alt="logo" width="200"/>
 </p>
 
 > Note that this package also loads newly added `environmental` variables when you restart your typescript server.
