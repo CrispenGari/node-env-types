@@ -1,9 +1,9 @@
 {
   "name": "node-env-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "this is a simple package that generates typescript types for .env(dotenv) files.",
-  "main": "lib/index.js",
-  "types": "lib",
+  "main": "src index.ts",
+  "bin": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/index.ts",
