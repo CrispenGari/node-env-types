@@ -1,0 +1,46 @@
+{
+  "name": "node-env-types",
+  "version": "1.0.0",
+  "description": "this is a simple package that generates typescript types for .env(dotenv) files.",
+  "main": "lib/index.js",
+  "types": "lib",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrispenGari/node-env-types.git"
+  },
+  "keywords": [
+    ".env",
+    "typescript",
+    "dotenv",
+    "types",
+    "dotenv-types",
+    ".env-types",
+    "environment-variables",
+    "javascript",
+    "nodejs"
+  ],
+  "peerDependencies": {
+    "dotenv": "^16.x",
+    "typescript": "^4.x"
+  },
+  "author": "CrispenGari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrispenGari/node-env-types/issues"
+  },
+  "homepage": "https://github.com/CrispenGari/node-env-types#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/node": "^18.0.6",
+    "typescript": "^4.7.4"
+  }
+}
