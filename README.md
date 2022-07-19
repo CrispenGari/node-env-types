@@ -76,6 +76,33 @@ The `createEnvTypes` takes two parameters which are both optional,
 </tbody>
 </table>
 
+### Common problems
+
+- Sometimes you may not get `auto-completion` even if you have generated the `.d.ts` file. All you have to do is to open your `tsconfig.json` file under `includes` make sure that your `.d.ts` file is there in the array for example in my `env.d.ts` which is generated in the root i can have `includes` array to look as follows:
+
+```json
+{
+  "compilerOptions": {},
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "src/configs/test.ts",
+    "env.d.ts"
+  ]
+}
+```
+
+Alternatively you can pass an empty array or point to the `root` folder of your project instead of `src` as follows:
+
+```json
+{
+  "compilerOptions": {},
+  "include": ["./**/*.tsx", "./**/*.ts", "src/configs/test.ts", "env.d.ts"]
+}
+```
+
+- Before calling the `createEnvTypes()` functions make sure that you have a `.env` file in your root project of your folder, this is the default file `node-env-types` will be looking for, If environment variables are named differently, make sure that you specify the correct `filename` in the options.
+
 ### Languages
 
 This package is intended to be used by developers who codes in `typescript`.

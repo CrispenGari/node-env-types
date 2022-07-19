@@ -3,15 +3,15 @@ import { join } from "path";
 import { Options } from "./types";
 import { isComment, isValidVariableName, startWithExport } from "./utils";
 
-const createEnvTypes = (
-  rootPath: string = process.cwd(),
-  options?: Options
-) => {
+const createEnvTypes = (rootPath?: string, options?: Options) => {
   /**
    * rootPath: string
    * - this is the base path of your project where your .env file will be located
    */
 
+  if (!rootPath) {
+    rootPath = process.cwd();
+  }
   const fileName: string = options?.filename ? options?.filename : ".env";
 
   let envPath: string = join(rootPath, fileName);
@@ -81,4 +81,6 @@ const createEnvTypes = (
   console.log(`\n *** created env-types at ${outputFileName}.\n`);
 };
 
+process.env.
+createEnvTypes();
 export default createEnvTypes;
