@@ -32,7 +32,7 @@ After installing this package you can use it as follows:
 import loadEvTypes from 'node-env-types'
 import process = 'process'
 
-createEnvTypes(process.cwd(), {
+loadEvTypes(process.cwd(), {
   filename: ".env", // the path name of the file that contains your environmental variables
 });
 
