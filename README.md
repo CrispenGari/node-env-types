@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="https://npmjs.com/package/node-env-types"><img src="https://img.shields.io/npm/v/node-env-types.svg"></a>
-  <a href="https://github.com/crispengari/node-env-types/actions/workflows/ci.yml"><img src="https://github.com/crispengari/node-env-types/actions/workflows/main.yml/badge.svg"></a>
+  <a href="https://github.com/crispengari/node-env-types/actions/workflows/main.yml"><img src="https://github.com/crispengari/node-env-types/actions/workflows/main.yml/badge.svg"></a>
+    <a href="https://github.com/crispengari/node-env-types/actions/workflows/publish.yml"><img src="https://github.com/crispengari/node-env-types/actions/workflows/publish.yml/badge.svg"></a>
   <a href="https://github.com/crispengari/node-env-types/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/node-env-types.svg?maxAge=2592000"></a>
 <a href="https://img.shields.io/node/v/node-env-types.svg?label=node"><img src="https://img.shields.io/node/v/node-env-types.svg?label=node"></a>
   <a href="https://npmjs.com/package/node-env-types"><img src="https://img.shields.io/npm/dm/node-env-types.svg"></a>
