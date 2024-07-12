@@ -3,7 +3,7 @@ import { join } from "path";
 import { Options } from "./types";
 import { isComment, isValidVariableName, startWithExport } from "./utils";
 
-const createEnvTypes = (rootPath?: string, options?: Options) => {
+const loadEnvTypes = (rootPath?: string, options?: Options) => {
   /**
    * rootPath: string
    * - this is the base path of your project where your .env file will be located
@@ -23,7 +23,7 @@ const createEnvTypes = (rootPath?: string, options?: Options) => {
     : join(rootPath, "env.d.ts");
 
   const data: string = readFileSync(envPath, { encoding: "utf8" })
-    .replace(/("""|''').*?\1/gs, "")
+    .replace(/("""|''').*?\1/g, "")
     .trim();
 
   let variables: Array<string> = [];
@@ -80,7 +80,4 @@ const createEnvTypes = (rootPath?: string, options?: Options) => {
   writeFileSync(outputFileName, outPutText);
   console.log(`\n *** created env-types at ${outputFileName}.\n`);
 };
-
-process.env.
-createEnvTypes();
-export default createEnvTypes;
+export default loadEnvTypes;
