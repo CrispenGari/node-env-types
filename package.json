@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "private": "false",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest --detectOpenHandles",
     "build": "tsup src/index.ts --format esm,cjs --dts",
@@ -39,6 +41,7 @@
   },
   "homepage": "https://github.com/CrispenGari/node-env-types#readme",
   "dependencies": {
+    "@swc/core": "^1.6.13",
     "chalk": "^5.0.1",
     "dotenv": "^16.0.1",
     "typescript": "^5.5.3"
