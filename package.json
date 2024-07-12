@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "private": "false",
   "scripts": {
     "test": "jest --detectOpenHandles",
     "build": "tsup src/index.ts --format esm,cjs --dts",
@@ -65,5 +66,8 @@
       "node",
       "jest"
     ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

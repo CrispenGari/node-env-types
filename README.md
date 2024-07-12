@@ -1,44 +1,83 @@
-# node-env-types
+### node-env-types
 
 🌀 This package generates the typescript types for environment variables by reading your `.env` file.
 
 <p align="center" width="50%">
-<img src="https://github.com/CrispenGari/node-env-types/blob/main/logo.png" alt="logo" width="200"/>
+<img src="https://github.com/CrispenGari/node-env-types/blob/main/logo.png?raw=true" alt="logo" width="200"/>
 </p>
 
-> Note that this package also loads newly added `environmental` variables when you restart your typescript server.
+<p align="center">
+  <a href="https://npmjs.com/package/node-env-types"><img src="https://img.shields.io/npm/v/node-env-types.svg"></a>
+  <a href="https://github.com/crispengari/node-env-types/actions/workflows/ci.yml"><img src="https://github.com/crispengari/node-env-types/actions/workflows/main.yml/badge.svg"></a>
+  <a href="https://github.com/crispengari/node-env-types/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/node-env-types.svg?maxAge=2592000"></a>
+<a href="https://img.shields.io/node/v/node-env-types.svg?label=node"><img src="https://img.shields.io/node/v/node-env-types.svg?label=node"></a>
+  <a href="https://npmjs.com/package/node-env-types"><img src="https://img.shields.io/npm/dm/node-env-types.svg"></a>
+  <a href="https://typescriptlang.org/"><img src="https://img.shields.io/badge/language-typescript-blue.svg"></a>
+</p>
+
+> **Note:** This package also loads newly added environmental variables when you restart your TypeScript server.
+>
+> ## Table of Contents
+
+- [node-env-types](#node-env-types)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Console output](#console-output)
+- [Parameters](#parameters)
+- [Options](#options)
+- [Common problems](#common-problems)
+- [Languages](#languages)
+- [License](#license)
 
 ### Installation
 
-You can install this package using different package manager as a `dev` dependency.
+You can install this package using different package managers as a `dev` dependency.
 
-1. using `yarn`
+1. Using `yarn`:
 
-```shell
-yarn add -D node-env-types
-```
+   ```shell
+   yarn add -D node-env-types
+   ```
 
-2. using `npm`
+2. Using `npm`:
 
-```shell
-npm i --save-dev node-env-types
-```
+   ```shell
+   npm i --save-dev node-env-types
+   ```
+
+3. Using `pnpm`:
+
+   ```shell
+   pnpm add -D node-env-types
+   ```
+
+4. Using `bun`:
+
+   ```shell
+   bun add -d node-env-types
+   ```
 
 ### Usage
 
 After installing this package you can use it as follows:
 
 ```ts
-import loadEvTypes from 'node-env-types'
+import load from 'node-env-types'
 import process = 'process'
 
-loadEvTypes(process.cwd(), {
+load(process.cwd(), {
   filename: ".env", // the path name of the file that contains your environmental variables
 });
 
 ```
 
-> We recommend to call the `createEnvTypes(rootPath: string, options?: Options)` just at soon after your imports. Note that `env-types` will be generated after you have run the code for the first time and you must have an `.env` file or equivalent in your project.
+> We recommend calling `createEnvTypes(rootPath: string, options?: Options)` immediately after your imports. Note that `env-types` will be generated after you run the code for the first time, and you must have an `.env` file or equivalent in your project.
+
+Alternatively you can load environmental variables for the default `.env` file as follows without even calling the load function as follows:
+
+```ts
+import "node-env-types/load";
+```
 
 ### Console output
 
@@ -52,33 +91,22 @@ The during generation of `env-types` you can see the output on the console which
 
 ### Parameters
 
-The `createEnvTypes` takes two parameters which are both optional,
+The `createEnvTypes` function takes two optional parameters:
 
-1. `rootPath` - types of string where your `.env` file will be located and the default is your current working directory `process.cwd()`.
+1. `rootPath` - A string indicating the directory path where your `.env` file is located. The default value is the current working directory (`process.cwd()`).
 
-2. `options` - type `Option` which is an object of options.
+2. `options` - An optional object of type `Options` containing additional configuration options.
 
 ### Options
 
-<table>
-<thead>
-<tr>
-<th>Option</th><th>Description</th><th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>filename</td><td>This is optional, for example ypu can load your environmental variables from a file called .env-prod. If not provided the default will be used.</td><td>.env</td>
-</tr>
-<tr>
-<td>outputPath</td><td>This defines the path where you want your declarative typescript file to be outputed during types generations.</td><td>process.cwd()</td>
-</tr>
-</tbody>
-</table>
+| Option       | Description                                                                                                                                       | Default Value   |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| `filename`   | This is optional, for example you can load your environmental variables from a file called `.env-prod`. If not provided the default will be used. | `.env`          |
+| `outputPath` | This defines the path where you want your declarative TypeScript file to be output during types generation.                                       | `process.cwd()` |
 
 ### Common problems
 
-- Sometimes you may not get `auto-completion` even if you have generated the `.d.ts` file. All you have to do is to open your `tsconfig.json` file under `includes` make sure that your `.d.ts` file is there in the array for example in my `env.d.ts` which is generated in the root i can have `includes` array to look as follows:
+- Sometimes you may not get **auto-completion** even if you have generated the `.d.ts` file. All you have to do is to open your `tsconfig.json` file, go to `includes`, and make sure that your `.d.ts` file is listed there. For example, if your `env.d.ts` file is generated in the root directory, your `includes` array in `tsconfig.json` should look like this:
 
 ```json
 {
