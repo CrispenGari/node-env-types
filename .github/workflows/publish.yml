@@ -35,9 +35,6 @@ jobs:
       - name: 🚀 Linting and building
         run: yarn lint && yarn build
 
-      - name: 🚀 Check NPM Credentials
-        run: echo $(npm whoami)
-
       - name: 🚀 Create Realease Pull Request or Publish
         id: changesets
         uses: changesets/action@v1

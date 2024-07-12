@@ -74,12 +74,6 @@ load(process.cwd(), {
 
 > We recommend calling `createEnvTypes(rootPath: string, options?: Options)` immediately after your imports. Note that `env-types` will be generated after you run the code for the first time, and you must have an `.env` file or equivalent in your project.
 
-Alternatively you can load environmental variables for the default `.env` file as follows without even calling the load function as follows:
-
-```ts
-import "node-env-types/load";
-```
-
 ### Console output
 
 The during generation of `env-types` you can see the output on the console which looks similar to this:
